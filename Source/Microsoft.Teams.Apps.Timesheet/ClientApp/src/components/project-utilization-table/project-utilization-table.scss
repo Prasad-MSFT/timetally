@@ -1,0 +1,27 @@
+﻿// <copyright file="project-utilization-table.scss" company="Microsoft">
+// Copyright (c) Microsoft. All rights reserved.
+// </copyright>
+
+.utilization-table-container {
+    .status-web-bullets {
+        height: 0.8rem !important;
+        width: 0.8rem !important;
+    }
+    .close-button {
+        cursor: pointer;
+    }
+
+    .table-text {
+        font-size: 1.4rem;
+    }
+
+    .action-icon {
+        font-size: 1.6rem;
+    }
+
+    .manage-request-content {
+        .error-container {
+            position: relative;
+        }
+    }
+}

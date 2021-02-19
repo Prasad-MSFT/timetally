@@ -1,0 +1,89 @@
+﻿// <copyright file="manage-project.scss" company="Microsoft">
+// Copyright (c) Microsoft. All rights reserved.
+// </copyright>
+
+.manage-project-container {
+    margin: 0.5rem 1.5rem 0.6rem;
+    width: 100%;
+
+    .donut-container {
+        height: auto;
+        margin-right: 1rem;
+    }
+
+    .date-dropdown {
+        width: 18rem;
+    }
+
+    .mobile-action-button {
+        font-size: 2.4rem;
+    }
+}
+
+.manage-project-action {
+    height: 3.2rem;
+}
+
+.project-details-container {
+    background-color: #FFFFFF;
+    margin-right: 2.7rem !important;
+    cursor: pointer;
+
+    .donut-container {
+        overflow: hidden;
+    }
+
+    .text-container {
+        height: 8.6rem;
+
+        .status-label-web {
+            color: #252423;
+            font-size: 1.2rem;
+        }
+
+        .status-label-mobile {
+            color: #252423;
+            font-size: 1.5rem;
+        }
+
+        .status-bullets {
+            height: 0.6rem !important;
+            width: 0.6rem !important;
+        }
+
+        .project-text {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &:hover {
+        background-color: transparent;
+    }
+
+    .circular-progress {
+        height: 6rem;
+        width: 6rem !important;
+    }
+}
+
+.mobile-add-people {
+
+    .add-button {
+        font-size: 1.5rem;
+    }
+}
+
+.web-add-people {
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        padding-bottom: 3rem;
+        padding-left: 2.5rem;
+        padding-right: 3rem;
+        align-content: flex-end;
+        background-color: white;
+    }
+}

@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ManageProjectWrapper renders snapshots 1`] = `
+"<div class=\\"ui-provider\\" dir=\\"ltr\\" data-uses-unhanded-props=\\"true\\">
+  <div class=\\"ui-provider\\" data-uses-unhanded-props=\\"true\\">
+    <div class=\\"ui-flex\\" data-uses-unhanded-props=\\"true\\">
+      <div class=\\"manage-project-container\\">
+        <div>
+          <div class=\\"ui-flex\\" data-uses-unhanded-props=\\"true\\"><span class=\\"ui-text\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">Test</span>
+            <div class=\\"ui-flex date-dropdown\\" data-uses-unhanded-props=\\"true\\">
+              <div class=\\"ui-dropdown date-dropdown\\" data-uses-unhanded-props=\\"true\\" data-test-focused=\\"false\\">
+                <div class=\\"ui-dropdown__container\\">
+                  <div class=\\"ui-dropdown__selected-items\\"><button role=\\"button\\" data-aa-class=\\"Button\\" class=\\"ui-button ui-dropdown__trigger-button\\" id=\\"dropdown-trigger-button-10\\" type=\\"button\\" aria-haspopup=\\"true\\" data-toggle=\\"true\\" aria-labelledby=\\"dropdown-trigger-button-10\\" data-uses-unhanded-props=\\"true\\"><span dir=\\"auto\\" class=\\"ui-button__content\\" data-uses-unhanded-props=\\"true\\">January 2021</span></button></div>
+                  <div role=\\"img\\" aria-hidden=\\"true\\" data-aa-class=\\"Box\\" class=\\"ui-box ui-dropdown__toggle-indicator\\" data-uses-unhanded-props=\\"true\\"></div>
+                  <ul role=\\"listbox\\" data-aa-class=\\"List\\" class=\\"ui-list ui-dropdown__items-list\\" aria-labelledby=\\"downshift-3-label\\" id=\\"downshift-3-menu\\" tabindex=\\"-1\\" aria-hidden=\\"true\\" data-uses-unhanded-props=\\"true\\"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class=\\"ui-flex\\" data-uses-unhanded-props=\\"true\\">
+            <dl role=\\"presentation\\" data-aa-class=\\"Accordion\\" class=\\"ui-accordion\\" style=\\"width: 100%;\\" data-uses-unhanded-props=\\"true\\">
+              <dt role=\\"heading\\" aria-level=\\"3\\" data-aa-class=\\"AccordionTitle\\" class=\\"ui-accordion__title ui-accordion__title\\" id=\\"accordion-title-110\\" data-uses-unhanded-props=\\"true\\">
+                <div class=\\"ui-box ui-accordion__title__content-wrapper\\" aria-expanded=\\"false\\" aria-disabled=\\"false\\" aria-controls=\\"accordion-content-120\\" role=\\"button\\" tabindex=\\"0\\" data-aa-class=\\"AccordionTitle__content\\" data-uses-unhanded-props=\\"true\\">
+                  <div class=\\"ui-box\\" data-uses-unhanded-props=\\"true\\"></div>
+                  <div dir=\\"auto\\" class=\\"ui-box\\" data-uses-unhanded-props=\\"true\\">utilization</div>
+                </div>
+              </dt>
+              <dd aria-labelledby=\\"accordion-title-110\\" data-aa-class=\\"AccordionContent\\" class=\\"ui-accordion__content ui-accordion__content\\" id=\\"accordion-content-120\\" data-uses-unhanded-props=\\"true\\">
+                <div class=\\"project-details-container\\">
+                  <div>
+                    <div class=\\"ui-flex\\" data-uses-unhanded-props=\\"true\\">
+                      <div class=\\"donut-container ui-flex__item\\"><canvas id=\\"donutChart\\" width=\\"100\\" height=\\"100\\"></canvas>
+                        <div class=\\"ui-flex\\" data-uses-unhanded-props=\\"true\\"><span class=\\"ui-text\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">52 hoursCapitalLabel</span></div>
+                      </div>
+                      <div class=\\"ui-flex\\" data-uses-unhanded-props=\\"true\\">
+                        <div class=\\"ui-flex text-container\\" data-uses-unhanded-props=\\"true\\">
+                          <div class=\\"ui-flex\\" data-uses-unhanded-props=\\"true\\"><span role=\\"img\\" data-aa-class=\\"Status\\" class=\\"ui-status status-bullets\\" title=\\"billable\\" data-uses-unhanded-props=\\"true\\"></span><span class=\\"ui-text status-label-web\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">billable</span></div>
+                          <div class=\\"ui-flex\\" data-uses-unhanded-props=\\"true\\"><span role=\\"img\\" data-aa-class=\\"Status\\" class=\\"ui-status status-bullets\\" title=\\"nonBillable\\" data-uses-unhanded-props=\\"true\\"></span><span class=\\"ui-text status-label-web\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">nonBillable</span></div>
+                          <div class=\\"ui-flex\\" data-uses-unhanded-props=\\"true\\"><span role=\\"img\\" data-aa-class=\\"Status\\" class=\\"ui-status status-bullets\\" title=\\"notUtilized\\" data-uses-unhanded-props=\\"true\\"></span><span class=\\"ui-text status-label-web\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">notUtilized</span></div>
+                        </div>
+                        <div class=\\"ui-flex text-container\\" data-uses-unhanded-props=\\"true\\"><span class=\\"ui-text status-label-web\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">hours</span><span class=\\"ui-text status-label-web\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">hours</span><span class=\\"ui-text status-label-web\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">hours</span></div>
+                      </div>
+                    </div><span class=\\"ui-text\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">projectUnderutilizedLabel</span>
+                  </div>
+                </div>
+              </dd>
+              <dt role=\\"heading\\" aria-level=\\"3\\" data-aa-class=\\"AccordionTitle\\" class=\\"ui-accordion__title ui-accordion__title\\" id=\\"accordion-title-111\\" data-uses-unhanded-props=\\"true\\">
+                <div class=\\"ui-box ui-accordion__title__content-wrapper\\" aria-expanded=\\"false\\" aria-disabled=\\"false\\" aria-controls=\\"accordion-content-121\\" role=\\"button\\" tabindex=\\"0\\" data-aa-class=\\"AccordionTitle__content\\" data-uses-unhanded-props=\\"true\\">
+                  <div class=\\"ui-box\\" data-uses-unhanded-props=\\"true\\"></div>
+                  <div dir=\\"auto\\" class=\\"ui-box\\" data-uses-unhanded-props=\\"true\\">members (2)</div>
+                </div>
+              </dt>
+              <dd aria-labelledby=\\"accordion-title-111\\" data-aa-class=\\"AccordionContent\\" class=\\"ui-accordion__content ui-accordion__content\\" id=\\"accordion-content-121\\" data-uses-unhanded-props=\\"true\\">
+                <div>
+                  <div>
+                    <div class=\\"utilization-table-container\\">
+                      <div class=\\"ui-flex\\" data-uses-unhanded-props=\\"true\\">
+                        <div class=\\"manage-project-action ui-flex__item\\"><button data-aa-class=\\"Button\\" class=\\"ui-button\\" data-tid=\\"addMemberButton\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box\\" data-uses-unhanded-props=\\"true\\"><i data-icon-name=\\"AddFriend\\" aria-hidden=\\"true\\" class=\\"action-icon root-37\\"></i></div><span dir=\\"auto\\" class=\\"ui-button__content\\" data-uses-unhanded-props=\\"true\\">addPeople</span>
+                          </button></div>
+                      </div>
+                      <div role=\\"table\\" data-aa-class=\\"Table\\" class=\\"ui-table\\" data-tid=\\"member-table\\" data-uses-unhanded-props=\\"true\\">
+                        <div role=\\"row\\" data-aa-class=\\"TableRow\\" class=\\"ui-table__row ui-table__header\\" data-uses-unhanded-props=\\"true\\">
+                          <div role=\\"columnheader\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell a b\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\">
+                              <div aria-checked=\\"false\\" role=\\"checkbox\\" tabindex=\\"0\\" data-is-focusable=\\"true\\" data-aa-class=\\"Checkbox\\" class=\\"ui-checkbox\\" data-uses-unhanded-props=\\"true\\">
+                                <div class=\\"ui-box ui-checkbox__indicator\\" data-uses-unhanded-props=\\"true\\"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div role=\\"columnheader\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell c d\\" data-uses-unhanded-props=\\"true\\">
+                            <div dir=\\"auto\\" class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\">employee</div>
+                          </div>
+                          <div role=\\"columnheader\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell e f\\" data-uses-unhanded-props=\\"true\\">
+                            <div dir=\\"auto\\" class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\">totalWorkHours</div>
+                          </div>
+                          <div role=\\"columnheader\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell e f\\" data-uses-unhanded-props=\\"true\\">
+                            <div dir=\\"auto\\" class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\">status</div>
+                          </div>
+                        </div>
+                        <div role=\\"row\\" data-aa-class=\\"TableRow\\" class=\\"ui-table__row\\" data-uses-unhanded-props=\\"true\\">
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell a b\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\">
+                              <div aria-checked=\\"false\\" role=\\"checkbox\\" tabindex=\\"0\\" data-is-focusable=\\"true\\" data-aa-class=\\"Checkbox\\" class=\\"ui-checkbox\\" data-uses-unhanded-props=\\"true\\">
+                                <div class=\\"ui-box ui-checkbox__indicator\\" data-uses-unhanded-props=\\"true\\"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell c d\\" title=\\"demo 1\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\">
+                              <div class=\\"ui-flex\\" data-uses-unhanded-props=\\"true\\"><span role=\\"img\\" data-aa-class=\\"Status\\" class=\\"ui-status status-web-bullets\\" title=\\"billable\\" data-uses-unhanded-props=\\"true\\"></span>
+                                <div class=\\"ui-avatar\\" data-uses-unhanded-props=\\"true\\"><span class=\\"ui-label\\" title=\\"demo 1\\" data-uses-unhanded-props=\\"true\\"><div dir=\\"auto\\" class=\\"ui-box\\" data-uses-unhanded-props=\\"true\\">d1</div></span></div><span class=\\"ui-text table-text\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">demo 1</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell e f\\" title=\\"50\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\"><span class=\\"ui-text table-text\\" data-uses-unhanded-props=\\"true\\">50</span></div>
+                          </div>
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell e f\\" title=\\"billable\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\"><span class=\\"ui-text table-text\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">billable</span></div>
+                          </div>
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell a b\\" title=\\"closeIconLabel\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\"><span role=\\"img\\" aria-hidden=\\"true\\" class=\\"ui-icon close-button\\" data-tid=\\"remove-member-0\\"><svg role=\\"presentation\\" focusable=\\"false\\" viewBox=\\"8 8 16 16\\"><g><path class=\\"ui-icon__outline\\" d=\\"M16.707 16l4.243-4.243a.5.5 0 1 0-.707-.707L16 15.293l-4.243-4.243a.5.5 0 1 0-.707.707L15.293 16l-4.243 4.243a.5.5 0 1 0 .707.707L16 16.707l4.243 4.243a.498.498 0 0 0 .707 0 .5.5 0 0 0 0-.707L16.707 16z\\"></path><path class=\\"ui-icon__filled\\" d=\\"M17.414 16l3.89-3.89a1 1 0 1 0-1.415-1.413L16 14.586l-3.89-3.89a1 1 0 1 0-1.413 1.415L14.586 16l-3.89 3.89a1 1 0 1 0 1.415 1.413L16 17.414l3.89 3.89a.997.997 0 0 0 1.413 0 1 1 0 0 0 0-1.415L17.414 16z\\"></path></g></svg></span></div>
+                          </div>
+                        </div>
+                        <div role=\\"row\\" data-aa-class=\\"TableRow\\" class=\\"ui-table__row\\" data-uses-unhanded-props=\\"true\\">
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell a b\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\">
+                              <div aria-checked=\\"false\\" role=\\"checkbox\\" tabindex=\\"0\\" data-is-focusable=\\"true\\" data-aa-class=\\"Checkbox\\" class=\\"ui-checkbox\\" data-uses-unhanded-props=\\"true\\">
+                                <div class=\\"ui-box ui-checkbox__indicator\\" data-uses-unhanded-props=\\"true\\"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell c d\\" title=\\"demo 1\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\">
+                              <div class=\\"ui-flex\\" data-uses-unhanded-props=\\"true\\"><span role=\\"img\\" data-aa-class=\\"Status\\" class=\\"ui-status status-web-bullets\\" title=\\"billable\\" data-uses-unhanded-props=\\"true\\"></span>
+                                <div class=\\"ui-avatar\\" data-uses-unhanded-props=\\"true\\"><span class=\\"ui-label\\" title=\\"demo 1\\" data-uses-unhanded-props=\\"true\\"><div dir=\\"auto\\" class=\\"ui-box\\" data-uses-unhanded-props=\\"true\\">d1</div></span></div><span class=\\"ui-text table-text\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">demo 1</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell e f\\" title=\\"50\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\"><span class=\\"ui-text table-text\\" data-uses-unhanded-props=\\"true\\">50</span></div>
+                          </div>
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell e f\\" title=\\"billable\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\"><span class=\\"ui-text table-text\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">billable</span></div>
+                          </div>
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell a b\\" title=\\"closeIconLabel\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\"><span role=\\"img\\" aria-hidden=\\"true\\" class=\\"ui-icon close-button\\" data-tid=\\"remove-member-1\\"><svg role=\\"presentation\\" focusable=\\"false\\" viewBox=\\"8 8 16 16\\"><g><path class=\\"ui-icon__outline\\" d=\\"M16.707 16l4.243-4.243a.5.5 0 1 0-.707-.707L16 15.293l-4.243-4.243a.5.5 0 1 0-.707.707L15.293 16l-4.243 4.243a.5.5 0 1 0 .707.707L16 16.707l4.243 4.243a.498.498 0 0 0 .707 0 .5.5 0 0 0 0-.707L16.707 16z\\"></path><path class=\\"ui-icon__filled\\" d=\\"M17.414 16l3.89-3.89a1 1 0 1 0-1.415-1.413L16 14.586l-3.89-3.89a1 1 0 1 0-1.413 1.415L14.586 16l-3.89 3.89a1 1 0 1 0 1.415 1.413L16 17.414l3.89 3.89a.997.997 0 0 0 1.413 0 1 1 0 0 0 0-1.415L17.414 16z\\"></path></g></svg></span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </dd>
+              <dt role=\\"heading\\" aria-level=\\"3\\" data-aa-class=\\"AccordionTitle\\" class=\\"ui-accordion__title ui-accordion__title\\" id=\\"accordion-title-112\\" data-uses-unhanded-props=\\"true\\">
+                <div class=\\"ui-box ui-accordion__title__content-wrapper\\" aria-expanded=\\"false\\" aria-disabled=\\"false\\" aria-controls=\\"accordion-content-122\\" role=\\"button\\" tabindex=\\"0\\" data-aa-class=\\"AccordionTitle__content\\" data-uses-unhanded-props=\\"true\\">
+                  <div class=\\"ui-box\\" data-uses-unhanded-props=\\"true\\"></div>
+                  <div dir=\\"auto\\" class=\\"ui-box\\" data-uses-unhanded-props=\\"true\\">tasks (1)</div>
+                </div>
+              </dt>
+              <dd aria-labelledby=\\"accordion-title-112\\" data-aa-class=\\"AccordionContent\\" class=\\"ui-accordion__content ui-accordion__content\\" id=\\"accordion-content-122\\" data-uses-unhanded-props=\\"true\\">
+                <div>
+                  <div>
+                    <div class=\\"utilization-table-container\\">
+                      <div class=\\"ui-flex\\" data-uses-unhanded-props=\\"true\\">
+                        <div class=\\"manage-project-action ui-flex__item\\"><button data-aa-class=\\"Button\\" class=\\"ui-button\\" data-tid=\\"addTaskButton\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box\\" data-uses-unhanded-props=\\"true\\"><i data-icon-name=\\"Org\\" aria-hidden=\\"true\\" class=\\"action-icon root-37\\"></i></div><span dir=\\"auto\\" class=\\"ui-button__content\\" data-uses-unhanded-props=\\"true\\">addTasksLabel</span>
+                          </button></div>
+                      </div>
+                      <div role=\\"table\\" data-aa-class=\\"Table\\" class=\\"ui-table\\" data-tid=\\"task-table\\" data-uses-unhanded-props=\\"true\\">
+                        <div role=\\"row\\" data-aa-class=\\"TableRow\\" class=\\"ui-table__row ui-table__header\\" data-uses-unhanded-props=\\"true\\">
+                          <div role=\\"columnheader\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell a b\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\">
+                              <div aria-checked=\\"false\\" role=\\"checkbox\\" tabindex=\\"0\\" data-is-focusable=\\"true\\" data-aa-class=\\"Checkbox\\" class=\\"ui-checkbox\\" data-uses-unhanded-props=\\"true\\">
+                                <div class=\\"ui-box ui-checkbox__indicator\\" data-uses-unhanded-props=\\"true\\"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div role=\\"columnheader\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell g h\\" data-uses-unhanded-props=\\"true\\">
+                            <div dir=\\"auto\\" class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\">taskNameLabel</div>
+                          </div>
+                          <div role=\\"columnheader\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell g h\\" data-uses-unhanded-props=\\"true\\">
+                            <div dir=\\"auto\\" class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\">addedByLabel</div>
+                          </div>
+                          <div role=\\"columnheader\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell g h\\" data-uses-unhanded-props=\\"true\\">
+                            <div dir=\\"auto\\" class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\">totalHourWorkedLabel</div>
+                          </div>
+                        </div>
+                        <div role=\\"row\\" data-aa-class=\\"TableRow\\" class=\\"ui-table__row\\" data-uses-unhanded-props=\\"true\\">
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell a b\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\">
+                              <div aria-checked=\\"false\\" role=\\"checkbox\\" tabindex=\\"0\\" data-is-focusable=\\"true\\" data-aa-class=\\"Checkbox\\" class=\\"ui-checkbox\\" data-uses-unhanded-props=\\"true\\">
+                                <div class=\\"ui-box ui-checkbox__indicator\\" data-uses-unhanded-props=\\"true\\"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell g h\\" title=\\"test\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\"><span class=\\"ui-text table-text\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">test</span></div>
+                          </div>
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell g h\\" title=\\"test\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\"><span class=\\"ui-text table-text\\" dir=\\"auto\\" data-uses-unhanded-props=\\"true\\">test</span></div>
+                          </div>
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell g h\\" title=\\"44\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\"><span class=\\"ui-text table-text\\" data-uses-unhanded-props=\\"true\\">44</span></div>
+                          </div>
+                          <div role=\\"cell\\" data-aa-class=\\"TableCell\\" class=\\"ui-table__cell a b\\" title=\\"closeIconLabel\\" data-uses-unhanded-props=\\"true\\">
+                            <div class=\\"ui-box ui-table__cell__content\\" data-uses-unhanded-props=\\"true\\"><span role=\\"img\\" aria-hidden=\\"true\\" class=\\"ui-icon close-button\\" data-tid=\\"remove-task-0\\"><svg role=\\"presentation\\" focusable=\\"false\\" viewBox=\\"8 8 16 16\\"><g><path class=\\"ui-icon__outline\\" d=\\"M16.707 16l4.243-4.243a.5.5 0 1 0-.707-.707L16 15.293l-4.243-4.243a.5.5 0 1 0-.707.707L15.293 16l-4.243 4.243a.5.5 0 1 0 .707.707L16 16.707l4.243 4.243a.498.498 0 0 0 .707 0 .5.5 0 0 0 0-.707L16.707 16z\\"></path><path class=\\"ui-icon__filled\\" d=\\"M17.414 16l3.89-3.89a1 1 0 1 0-1.415-1.413L16 14.586l-3.89-3.89a1 1 0 1 0-1.413 1.415L14.586 16l-3.89 3.89a1 1 0 1 0 1.415 1.413L16 17.414l3.89 3.89a.997.997 0 0 0 1.413 0 1 1 0 0 0 0-1.415L17.414 16z\\"></path></g></svg></span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;

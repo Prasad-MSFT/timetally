@@ -1,0 +1,49 @@
+﻿// <copyright file="project-card.scss" company="Microsoft">
+// Copyright (c) Microsoft. All rights reserved.
+// </copyright>
+
+.project-card-container {
+    height: 9rem;
+    width: 24rem;
+    background-color: #FFFFFF;
+    border: 0 solid #E1E1E1;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.12);
+    border-radius: 3px;
+    margin-right: 2.7rem !important;
+    margin-top: 2rem !important;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.project-card-container:hover {
+    background-color: transparent;
+}
+
+.project-card-container .circular-progress {
+    height: 6rem;
+    width: 6rem !important;
+}
+
+.project-card-container .text-container .underutilized-text {
+    color: #C4314B;
+}
+
+.project-card-container .text-container .fully-utilized-text {
+    color: #13A40E;
+}
+
+.project-card-container .text-container .project-title {
+    font-size: 1.6rem;
+}
+
+.project-card-container .text-container .project-subtitle {
+    color: #6E6E6E
+}
+
+.project-card-container .text-container .project-text {
+    margin-bottom: 0.5rem;
+}
+
+.project-card-container .text-container {
+    width: 14rem !important;
+}

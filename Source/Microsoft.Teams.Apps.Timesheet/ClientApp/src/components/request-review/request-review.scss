@@ -1,0 +1,188 @@
+﻿/*
+    <copyright file="request-review.scss" company="Microsoft">
+    Copyright (c) Microsoft. All rights reserved.
+    </copyright>
+*/
+
+.request-review-container {
+    padding: 1rem 1rem 0rem;
+    width: 100%;
+    height: 60rem;
+    overflow-x: auto;
+
+    .request-table-container {
+        height: 45vh;
+        overflow-y: auto;
+    }
+
+    .user-avatar {
+        margin-right: 2.4rem;
+    }
+
+    .user-name {
+        font-size: 1.6rem;
+        opacity: 0.9;
+        letter-spacing: 0;
+        line-height: 24px;
+    }
+
+    .user-subtitle {
+        font-size: 1.2rem;
+        opacity: 0.6;
+        letter-spacing: 0;
+    }
+
+    .reason-input {
+        height: 9.6rem !important;
+    }
+
+    .projects-detail-container {
+        margin-top: 1.2rem;
+    }
+
+    .project-container {
+        width: 26.8rem;
+    }
+
+    .project-title {
+        margin-bottom: 0.8rem;
+        color: #252423;
+        letter-spacing: 0;
+        line-height: 18px;
+    }
+
+    .project-task {
+        margin-bottom: 0.4rem;
+        letter-spacing: 0;
+        line-height: 18px;
+    }
+
+    .manage-tasks-list-container {
+        height: 5.4rem;
+
+        .subtitle-text {
+            color: #6e6e6e;
+            font-size: 1.3rem;
+        }
+
+        .title-text {
+            font-size: 1.7rem;
+        }
+    }
+
+    .review-request-mobile-view {
+
+        .user-details {
+            width: 100%;
+        }
+
+        .user-avatar {
+            margin-right: 1.6rem !important;
+        }
+
+        .user-name {
+            font-size: 1.7rem;
+        }
+
+        .user-subtitle {
+            font-size: 1.3rem;
+            letter-spacing: 0;
+        }
+
+        .list-header {
+            height: 4.8rem;
+            background: #F8F8F8;
+        }
+
+        .calendar-container {
+            margin-bottom: 1.9rem;
+        }
+
+        .mobile-title {
+            font-size: 1.7rem;
+            line-height: 2.2rem;
+        }
+
+        .mobile-subtitle {
+            font-size: 1.5rem;
+            line-height: 2.2rem;
+            opacity: 0.6;
+        }
+
+        .project-title-detail {
+            font-size: 1.5rem;
+        }
+    }
+
+    .desktop-subtitle {
+        opacity: 0.7;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding-bottom: 3.2rem;
+        padding-top: 3.2rem;
+        padding-right: 3rem;
+        background-color: white;
+        width: 100%;
+
+        .mobile-approve {
+            border-radius: 0.8rem;
+            width: 10rem;
+            height: 4.5rem;
+        }
+    }
+
+    .mobile-reject {
+        border-radius: 0.8rem;
+        width: 10rem;
+        height: 4.5rem;
+        border: 0.1rem solid #A6A7DC;
+    }
+}
+
+.dark-container {
+    .request-review-container {
+        .review-request-mobile-view {
+            .list-header {
+                height: 4.8rem;
+                background: #181818;
+            }
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            padding-bottom: 3.2rem;
+            padding-top: 3.2rem;
+            padding-right: 3rem;
+            background-color: #2C2C2C;
+            width: 100%;
+        }
+    }
+}
+
+.high-contrast-container {
+    .request-review-container {
+        .review-request-mobile-view {
+            .list-header {
+                height: 4.8rem;
+                background: #181818;
+            }
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            padding-bottom: 3.2rem;
+            padding-top: 3.2rem;
+            padding-right: 3rem;
+            background-color: #000000;
+            width: 100%;
+        }
+    }
+}

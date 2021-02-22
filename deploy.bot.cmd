@@ -67,6 +67,8 @@ SET MSBUILD_PATH=%ProgramFiles(x86)%\MSBuild\14.0\Bin\MSBuild.exe
 echo Handling ASP.NET Core Web Application deployment.
 
 :: 1. Restore nuget packages
+echo installing entity framework packages
+dotnet tool install --global dotnet-ef
 echo step 1st dotnet restore package
 call :ExecuteCmd dotnet restore "%DEPLOYMENT_SOURCE%\Source\Microsoft.Teams.Apps.Timesheet.sln"
 IF !ERRORLEVEL! NEQ 0 goto error

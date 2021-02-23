@@ -52,6 +52,11 @@ IF NOT DEFINED KUDU_SYNC_CMD (
 :: ----------
 echo Handling function App deployment with Msbuild.
 
+echo Set path 1
+setx PATH "%PATH%;D:\local\UserProfile\.dotnet\tools"
+echo installing entity framework packages
+dotnet tool install --global dotnet-ef
+
 :: 1. Restore nuget packages
 call :ExecuteCmd nuget.exe restore "%DEPLOYMENT_SOURCE%\Source\Microsoft.Teams.Apps.Timesheet.sln" -MSBuildPath "%MSBUILD_15_DIR%"
 IF !ERRORLEVEL! NEQ 0 goto error

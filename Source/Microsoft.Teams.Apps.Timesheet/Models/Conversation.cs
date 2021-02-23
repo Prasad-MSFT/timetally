@@ -19,7 +19,7 @@ namespace Microsoft.Teams.Apps.Timesheet.Models
         /// <summary>
         /// Gets or sets Id of conversation between user and bot.
         /// </summary>
-        public Guid ConversationId { get; set; }
+        public string ConversationId { get; set; }
 
         /// <summary>
         /// Gets or sets service URL.

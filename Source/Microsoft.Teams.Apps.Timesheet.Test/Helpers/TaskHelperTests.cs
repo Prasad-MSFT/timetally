@@ -8,7 +8,7 @@ namespace Microsoft.Teams.Apps.Timesheet.Test.Helpers
     using System.Linq;
     using System.Net;
     using Microsoft.Extensions.Logging;
-    using Microsoft.Teams.Apps.Timesheet.Helpers.Task;
+    using Microsoft.Teams.Apps.Timesheet.Helpers;
     using Microsoft.Teams.Apps.Timesheet.Models;
     using Microsoft.Teams.Apps.Timesheet.Repositories;
     using Microsoft.Teams.Apps.Timesheet.Tests.TestData;

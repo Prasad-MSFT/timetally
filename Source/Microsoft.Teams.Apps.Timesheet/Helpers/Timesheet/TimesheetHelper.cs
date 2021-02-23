@@ -6,15 +6,18 @@ namespace Microsoft.Teams.Apps.Timesheet.Helpers
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using System.Net;
     using System.Threading.Tasks;
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Options;
+    using Microsoft.Teams.Apps.Timesheet.Cards;
     using Microsoft.Teams.Apps.Timesheet.Extensions;
     using Microsoft.Teams.Apps.Timesheet.ModelMappers;
     using Microsoft.Teams.Apps.Timesheet.Models;
     using Microsoft.Teams.Apps.Timesheet.Repositories;
+    using Microsoft.Teams.Apps.Timesheet.Services;
 
     /// <summary>
     /// Provides helper methods for managing operations related to timesheet.
@@ -30,6 +33,16 @@ namespace Microsoft.Teams.Apps.Timesheet.Helpers
         /// Holds the instance of timesheet mapper.
         /// </summary>
         private readonly ITimesheetMapper timesheetMapper;
+
+        /// <summary>
+        /// Notification helper instance to send notifications to user.
+        /// </summary>
+        private readonly INotificationHelper notificationHelper;
+
+        /// <summary>
+        /// Instance of adaptive card service to construct notification cards.
+        /// </summary>
+        private readonly IAdaptiveCardService adaptiveCardService;
 
         /// <summary>
         /// Logs errors and information.
@@ -48,16 +61,22 @@ namespace Microsoft.Teams.Apps.Timesheet.Helpers
         /// <param name="repositoryAccessors">The instance of repository accessors.</param>
         /// <param name="timesheetMapper">The instance of timesheet mapper.</param>
         /// <param name="logger">The ILogger object which logs errors and information.</param>
+        /// <param name="notificationHelper">Notification helper instance to send notifications to user.</param>
+        /// <param name="adaptiveCardService">Instance of adaptive card service to construct notification cards.</param>
         public TimesheetHelper(
             IOptions<BotSettings> botOptions,
             IRepositoryAccessors repositoryAccessors,
             ITimesheetMapper timesheetMapper,
-            ILogger<TimesheetHelper> logger)
+            ILogger<TimesheetHelper> logger,
+            INotificationHelper notificationHelper,
+            IAdaptiveCardService adaptiveCardService)
         {
             this.repositoryAccessors = repositoryAccessors;
             this.timesheetMapper = timesheetMapper;
             this.logger = logger;
             this.botOptions = botOptions;
+            this.notificationHelper = notificationHelper;
+            this.adaptiveCardService = adaptiveCardService;
         }
 
         /// <summary>
@@ -588,6 +607,7 @@ namespace Microsoft.Teams.Apps.Timesheet.Helpers
         public async Task<bool> ApproveOrRejectTimesheetRequestsAsync(IEnumerable<TimesheetEntity> timesheets, IEnumerable<RequestApprovalDTO> requestApprovals, TimesheetStatus status)
         {
             var timesheetsCount = timesheets.Count();
+            var timesheetForSendNotification = timesheets.ToList();
 #pragma warning disable CA1062 // Null check is handled by controller.
             foreach (var timesheetRequest in timesheets)
 #pragma warning restore CA1062 // Null check is handled by controller.
@@ -606,6 +626,7 @@ namespace Microsoft.Teams.Apps.Timesheet.Helpers
                     if (response == timesheetsCount)
                     {
                         transaction.Commit();
+                        await this.SendNotificationsAsync(timesheetForSendNotification, status);
                         return true;
                     }
                 }
@@ -712,6 +733,89 @@ namespace Microsoft.Teams.Apps.Timesheet.Helpers
             }
 
             return totalEfforts;
+        }
+
+        /// <summary>
+        /// Send notification.
+        /// </summary>
+        /// <param name="timesheets">Details of timesheet.</param>
+        /// <param name="status">Status of timesheet.</param>
+        /// <returns>Task represent async operation.</returns>
+        private async Task<bool> SendNotificationsAsync(List<TimesheetEntity> timesheets, TimesheetStatus status)
+        {
+            var timesheetsGroupedByUser = timesheets.Where(timesheet => timesheet.Hours > 0).GroupBy(timesheet => timesheet.UserId);
+            foreach (var userTimesheets in timesheetsGroupedByUser)
+            {
+                var userConversation = await this.repositoryAccessors.ConversationRepository.GetAsync(userTimesheets.First().UserId);
+
+                if (userConversation != null)
+                {
+                    var groupedByProject = userTimesheets.GroupBy(timesheet => timesheet.Task.ProjectId);
+
+                    foreach (var projectwiseTimesheets in groupedByProject)
+                    {
+                        var tprojectwiseTimesheets = projectwiseTimesheets.OrderBy(timesheet => timesheet.TimesheetDate).ToList();
+                        var daterange = new List<TimesheetEntity>[100];
+
+                        int currentItemIndex = 0;
+                        for (int i = 0; i < tprojectwiseTimesheets.Count; i++)
+                        {
+                            if (i == 0)
+                            {
+                                daterange[currentItemIndex] = new List<TimesheetEntity>();
+                                daterange[currentItemIndex].Add(tprojectwiseTimesheets[i]);
+                            }
+                            else
+                            {
+                                if ((tprojectwiseTimesheets[i].TimesheetDate == daterange[currentItemIndex].Last().TimesheetDate)
+                                    || (tprojectwiseTimesheets[i].TimesheetDate.AddDays(-1) == daterange[currentItemIndex].Last().TimesheetDate))
+                                {
+                                    daterange[currentItemIndex].Add(tprojectwiseTimesheets[i]);
+                                }
+                                else
+                                {
+                                    currentItemIndex += 1;
+                                    daterange[currentItemIndex] = new List<TimesheetEntity>();
+                                    daterange[currentItemIndex].Add(tprojectwiseTimesheets[i]);
+                                }
+                            }
+                        }
+
+                        var filteredDaterange = daterange.Where(item => item != null && item.Count > 0);
+
+                        foreach (var item in filteredDaterange)
+                        {
+                            if (item.Count > 0)
+                            {
+                                var isTimesheetForOneDay = item.First().TimesheetDate.Date == item.Last().TimesheetDate.Date;
+                                var cardDetails = new ApproveRejectCard
+                                {
+                                    Date = isTimesheetForOneDay ? "{{DATE(" + item.First().TimesheetDate.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'", CultureInfo.InvariantCulture) + ")}}" : "{{DATE(" + item.First().TimesheetDate.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'", CultureInfo.InvariantCulture) + ")}} - {{DATE(" + item.Last().TimesheetDate.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'", CultureInfo.InvariantCulture) + ")}}",
+                                    Hours = Convert.ToString(item.Sum(timesheet => timesheet.Hours), CultureInfo.InvariantCulture),
+                                    ProjectTitle = item.First().Task.Project.Title,
+                                };
+
+                                if (status == TimesheetStatus.Approved)
+                                {
+                                    var approvedCardAttachment = this.adaptiveCardService.GetApprovedNotificationCard(cardDetails);
+
+                                    await this.notificationHelper.SendNotificationToUserAsync(userConversation, approvedCardAttachment);
+                                }
+                                else if (status == TimesheetStatus.Rejected)
+                                {
+                                    var commentByManager = item.First().ManagerComments;
+                                    cardDetails.Comment = string.IsNullOrEmpty(commentByManager) ? "-" : commentByManager;
+
+                                    var rejectedCardAttachment = this.adaptiveCardService.GetRejectedNotificationCard(cardDetails);
+                                    await this.notificationHelper.SendNotificationToUserAsync(userConversation, rejectedCardAttachment);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return true;
         }
     }
 }

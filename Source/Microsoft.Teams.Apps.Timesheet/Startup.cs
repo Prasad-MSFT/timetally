@@ -68,6 +68,8 @@ namespace Microsoft.Teams.Apps.Timesheet
         {
             string appId = this.configuration.GetValue<string>("App:Id");
             string appPassword = this.configuration.GetValue<string>("App:Password");
+            services
+                 .AddSingleton(new MicrosoftAppCredentials(appId, appPassword));
 
             services.RegisterConfigurationSettings(this.configuration);
 
@@ -88,7 +90,6 @@ namespace Microsoft.Teams.Apps.Timesheet
             services.RegisterGraphServices();
 
             services.RegisterRepositories();
-            services.RegisterHelpers();
             services.RegisterModelMappers();
             services.AddSingleton<TelemetryClient>();
 

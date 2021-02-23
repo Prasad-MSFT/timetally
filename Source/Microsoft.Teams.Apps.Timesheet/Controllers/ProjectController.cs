@@ -17,7 +17,6 @@ namespace Microsoft.Teams.Apps.Timesheet.Controllers
     using Microsoft.Teams.Apps.Timesheet.Authentication;
     using Microsoft.Teams.Apps.Timesheet.Extensions;
     using Microsoft.Teams.Apps.Timesheet.Helpers;
-    using Microsoft.Teams.Apps.Timesheet.Helpers.Task;
     using Microsoft.Teams.Apps.Timesheet.ModelMappers.Task;
     using Microsoft.Teams.Apps.Timesheet.Models;
     using Microsoft.Teams.Apps.Timesheet.Repositories;

@@ -5,10 +5,13 @@
 namespace Microsoft.Teams.Apps.Timesheet.Bot
 {
     using System;
+    using System.Linq;
     using System.Threading.Tasks;
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Schema;
     using Microsoft.Extensions.Logging;
+    using Microsoft.Teams.Apps.Timesheet.Models;
+    using Microsoft.Teams.Apps.Timesheet.Repositories;
     using Microsoft.Teams.Apps.Timesheet.Services;
 
     /// <summary>
@@ -27,16 +30,24 @@ namespace Microsoft.Teams.Apps.Timesheet.Bot
         private readonly IAdaptiveCardService adaptiveCardService;
 
         /// <summary>
+        /// The instance of repository accessors to access repositories.
+        /// </summary>
+        private readonly IRepositoryAccessors repositoryAccessors;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AppLifecycleHandler"/> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="adaptiveCardService">Instance of adaptive card service to create and get adaptive cards.</param>
+        /// <param name="repositoryAccessors">The instance of repository accessors.</param>
         public AppLifecycleHandler(
             ILogger<AppLifecycleHandler> logger,
-            IAdaptiveCardService adaptiveCardService)
+            IAdaptiveCardService adaptiveCardService,
+            IRepositoryAccessors repositoryAccessors)
         {
             this.logger = logger;
             this.adaptiveCardService = adaptiveCardService;
+            this.repositoryAccessors = repositoryAccessors;
         }
 
         /// <summary>
@@ -54,7 +65,31 @@ namespace Microsoft.Teams.Apps.Timesheet.Bot
 
             var activity = turnContext.Activity;
 
-            // TODO: Save user conversation id, AAD object id, service URL in DB.
+            // TODO: Save user conversation id, AAD object id, service URL in DB.var existingRecord = await this.repositoryAccessors.ConversationRepository.FindAsync(conversation => conversation.UserId == Guid.Parse(turnContext.Activity.From.AadObjectId));
+            var existingRecord = await this.repositoryAccessors.ConversationRepository.FindAsync(conversation => conversation.UserId == Guid.Parse(turnContext.Activity.From.AadObjectId));
+
+            if (existingRecord.Any())
+            {
+                var userConversation = existingRecord.First();
+                userConversation.ServiceUrl = activity.ServiceUrl;
+                userConversation.BotInstalledOn = DateTime.UtcNow;
+
+                this.repositoryAccessors.ConversationRepository.Update(userConversation);
+            }
+            else
+            {
+                var userConversationDetails = new Conversation
+                {
+                    BotInstalledOn = DateTime.Now,
+                    ConversationId = activity.Conversation.Id,
+                    ServiceUrl = activity.ServiceUrl,
+                    UserId = Guid.Parse(turnContext.Activity.From.AadObjectId),
+                };
+
+                this.repositoryAccessors.ConversationRepository.Add(userConversationDetails);
+            }
+
+            await this.repositoryAccessors.SaveChangesAsync();
             this.logger.LogInformation($"Successfully installed app for user {activity.From.AadObjectId}.");
         }
     }

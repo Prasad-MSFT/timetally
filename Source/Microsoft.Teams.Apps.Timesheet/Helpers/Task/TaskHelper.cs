@@ -2,7 +2,7 @@
 // Copyright (c) Microsoft. All rights reserved.
 // </copyright>
 
-namespace Microsoft.Teams.Apps.Timesheet.Helpers.Task
+namespace Microsoft.Teams.Apps.Timesheet.Helpers
 {
     using System;
     using System.Linq;

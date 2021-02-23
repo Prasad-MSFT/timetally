@@ -18,7 +18,6 @@ namespace Microsoft.Teams.Apps.Timesheet
     using Microsoft.Teams.Apps.Timesheet.Authentication;
     using Microsoft.Teams.Apps.Timesheet.Bot;
     using Microsoft.Teams.Apps.Timesheet.Helpers;
-    using Microsoft.Teams.Apps.Timesheet.Helpers.Task;
     using Microsoft.Teams.Apps.Timesheet.ModelMappers;
     using Microsoft.Teams.Apps.Timesheet.ModelMappers.Task;
     using Microsoft.Teams.Apps.Timesheet.Models;
@@ -97,7 +96,7 @@ namespace Microsoft.Teams.Apps.Timesheet
         public static void RegisterHelpers(this IServiceCollection services)
         {
             services.AddTransient<IProjectHelper, ProjectHelper>();
-            services.AddSingleton<IAppLifecycleHandler, AppLifecycleHandler>();
+            services.AddTransient<IAppLifecycleHandler, AppLifecycleHandler>();
             services.AddTransient<IProjectHelper, ProjectHelper>();
             services.AddTransient<IManagerDashboardHelper, ManagerDashboardHelper>();
             services.AddTransient<IUserHelper, UserHelper>();
@@ -105,6 +104,7 @@ namespace Microsoft.Teams.Apps.Timesheet
             services.AddTransient<IManagerDashboardHelper, ManagerDashboardHelper>();
             services.AddTransient<IUserHelper, UserHelper>();
             services.AddTransient<ITaskHelper, TaskHelper>();
+            services.AddTransient<INotificationHelper, NotificationHelper>();
         }
 
         /// <summary>

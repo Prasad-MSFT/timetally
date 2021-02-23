@@ -396,10 +396,6 @@
               "value": "bot"
             },
             {
-              "name": "UppercaseResponse",
-              "value": false
-            },
-            {
               "name": "SQLStorage:ConnectionString",
               "value": ""
             }

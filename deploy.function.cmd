@@ -52,12 +52,13 @@ IF NOT DEFINED KUDU_SYNC_CMD (
 :: ----------
 echo Handling function App deployment with Msbuild.
 
-:: 1. Restore nuget packages
-call :ExecuteCmd nuget.exe restore "%DEPLOYMENT_SOURCE%\Source\Microsoft.Teams.Apps.Timesheet.sln" -MSBuildPath "%MSBUILD_15_DIR%"
+:: 1.echo step 1st dotnet restore package
+call :ExecuteCmd dotnet restore "%DEPLOYMENT_SOURCE%\Source\Microsoft.Teams.Apps.Timesheet.sln"
 IF !ERRORLEVEL! NEQ 0 goto error
-
+ 
 :: 2. Build and publish
-call :ExecuteCmd "%MSBUILD_15_DIR%\MSBuild.exe" "%DEPLOYMENT_SOURCE%\Source\Microsoft.Teams.Apps.Timesheet.ReminderFunction\Microsoft.Teams.Apps.Timesheet.ReminderFunction.csproj" /p:DeployOnBuild=true /p:configuration=Release /p:publishurl="%DEPLOYMENT_TEMP%" %SCM_BUILD_ARGS%
+echo step 2nd build and publish
+call :ExecuteCmd dotnet publish "%DEPLOYMENT_SOURCE%\Source\Microsoft.Teams.Apps.Timesheet.ReminderFunction\Microsoft.Teams.Apps.Timesheet.ReminderFunction.csproj" --output "%DEPLOYMENT_TEMP%" --configuration Release
 IF !ERRORLEVEL! NEQ 0 goto error
 
 :: 3. KuduSync
